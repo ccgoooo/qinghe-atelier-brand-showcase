@@ -81,14 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Qinghe Atelier" },
+      { name: "description", content: "A fictional small studio of handmade objects." },
+      { property: "og:site_name", content: "Qinghe Atelier" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -96,6 +93,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Karla:wght@400;500&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -124,7 +123,20 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <header className="border-b border-border">
+          <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+            <Link to="/" className="font-display text-2xl">Qinghe Atelier</Link>
+            <div className="flex gap-6 text-sm">
+              {([["/", "Home"], ["/about", "About"], ["/products", "Products"], ["/contact", "Contact"]] as const).map(([to, l]) => (
+                <Link key={to} to={to} activeOptions={{ exact: true }} className="text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>{l}</Link>
+              ))}
+            </div>
+          </nav>
+        </header>
+        <main className="flex-1"><Outlet /></main>
+        <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">© Qinghe Atelier — a fictional brand. All content is placeholder.</footer>
+      </div>
     </QueryClientProvider>
   );
 }
