@@ -55,7 +55,7 @@ function Contact() {
           ))}
           <label className="block text-sm">Message
             <textarea name="message" rows={5} className={field} placeholder="Lorem ipsum..." />
-            {errors.message && <span className="text-xs text-destructive">{errors.message}</span>}
+            {errors["message"] && <span className="text-xs text-destructive">{errors["message"]}</span>}
           </label>
           <button type="submit" className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:opacity-90">Send message</button>
         </form>
