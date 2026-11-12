@@ -1,14 +1,20 @@
-# Welcome to your Lovable project
+# qh-robots-s2
+
+Qinghe Atelier is a multi-page website with home, about, products, and contact pages.
+
+The site uses placeholder text and image boxes to present the brand and its products. Its contact page includes a form for a name, email, and message, with a success message after submission. Form submissions are not sent or saved.
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://qinghe-atelier-brand-showcase.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a7683810-001e-53e2-836d-923d97a71149).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +26,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
